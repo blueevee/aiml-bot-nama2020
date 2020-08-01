@@ -4,11 +4,57 @@
         <pattern>OLA</pattern>
         <template>Olá! Eu sou o Blue, assistente pessoal da Evelyn. Como você se chama?</template>
     </category>
+
+    <category>
+        <pattern>BOA *</pattern>
+        <template><srai>OLA</srai></template>
+    </category>
+    
+    <category>
+        <pattern>BOM *</pattern>
+        <template><srai>OLA</srai></template>
+    </category>
+    
+    <category>
+        <pattern>OII</pattern>
+        <template><srai>OLA</srai></template>
+    </category>
+
+    <category>
+        <pattern>OLÁ</pattern>
+        <template><srai>OLA</srai></template>
+    </category>
+
+
+    <category>
+        <pattern>OI</pattern>
+        <template><srai>OLA</srai></template>
+    </category>
+
   
     <category>
         <pattern>MEU NOME É *</pattern>
-        <template>Muito prazer, <set name="username"><star/></set>. Como eu posso te ajudar?</template>
+        <template>
+            <think>
+                <set name="username"> <star/> </set>
+            </think>
+            Muito prazer,<formal><get name="username"/></formal>. Como eu posso te ajudar?
+        </template>
     </category>
+
+    <category>
+        <pattern>ME CHAMO *</pattern>
+        <template>
+            <think>
+                <set name="username">
+                    <star/>
+                </set>
+            </think>
+            <srai>MEU NOME É <get name="username"/></srai>
+        </template>
+    </category>
+
+
   
     <category>
         <pattern>COMO É MEU NOME</pattern>
@@ -28,7 +74,37 @@
             </condition>
         </template>
     </category>
-  
+
+    <category>
+        <pattern>QUAL O MEU NOME</pattern>
+        <template><srai>COMO É MEU NOME</srai></template>
+    </category>
+    
+    <category>
+        <pattern>COMO É MEU NOME MESMO</pattern>
+        <template><srai>COMO É MEU NOME</srai></template>
+    </category>
+    
+    <category>
+        <pattern>MEU NOME</pattern>
+        <template><srai>COMO É MEU NOME</srai></template>
+    </category>
+    
+    <category>
+        <pattern>VOCÊ SABE MEU NOME</pattern>
+        <template><srai>COMO É MEU NOME</srai></template>
+    </category>
+    
+    <category>
+        <pattern>VC SABE MEU NOME</pattern>
+        <template><srai>COMO É MEU NOME</srai></template>
+    </category>
+
+    <category>
+        <pattern>COMO EU ME CHAMO</pattern>
+        <template><srai>COMO É MEU NOME</srai></template>
+    </category>
+
     <category>
         <pattern>CONTE DE <set>number</set> ATÉ <set>number</set></pattern>
         <template>
@@ -49,14 +125,106 @@
                 </condition>
         </template>
     </category>
-  
+
+    <category>
+        <pattern>DIGA DE <set>number</set> A <set>number</set></pattern>
+        <template><srai>CONTE DE <star index="1"/> ATÉ <star index="2"/></srai></template>
+    </category>
+
+    <category>
+        <pattern>DIGA DE <set>number</set> ATE <set>number</set></pattern>
+        <template><srai>CONTE DE <star index="1"/> ATÉ <star index="2"/></srai></template>
+    </category>
+
+    <category>
+        <pattern>QUAIS SÃO SUAS SKILLS</pattern>
+        <template>
+            Trabalho com o desenvolvimento e design de chatbots a quase 2 anos,
+            de ferramentas já usei o Watson assistant e atualmente uso o Rasa nlu (ferramenta open source com python).
+            Sobre liguagens de programação tenho noção de Javascript com web, mas estudo principalmente python para conseguir desenvolver
+            algoritos de Machinne Learning, um assunto que me interessa bastante.
+        </template>
+    </category>
+
+    <category>
+        <pattern>COM O QUE VOCÊ JÁ TRABALHOU</pattern>
+        <template><srai>QUAIS SÃO SUAS SKILLS</srai></template>
+    </category>
+    
+    <category>
+        <pattern>QUAIS SUAS HABILIDADES</pattern>
+        <template><srai>QUAIS SÃO SUAS SKILLS</srai></template>
+    </category>
+
+    <category>
+        <pattern>VOCÊ GOSTA DE PETS</pattern>
+        <template>
+            Adotei uma cadelinha faz 1 ano e ela é meu xodó, adoro fazer viagens em família com ela.
+        </template>
+    </category>
+
+    <category>
+        <pattern>VOCÊ GOSTA DE ANIMAIS</pattern>
+        <template><srai>VOCÊ GOSTA DE PETS</srai></template>
+    </category>
+
+    <category>
+        <pattern>VC GOSTA DE CACHORRO</pattern>
+        <template><srai>VOCÊ GOSTA DE PETS</srai></template>
+    </category>
+    
+    <category>
+        <pattern>VC GOSTA DE ANIMAIS</pattern>
+        <template><srai>VOCÊ GOSTA DE PETS</srai></template>
+    </category>
+
+    <category>
+        <pattern>O QUE VOCÊ GOSTA DE COMER</pattern>
+        <template>
+            Eu amo comer de tudo 😅, mas minhas receitas favoritas pra fazer e comer são as doces 🍰 😋.
+        </template>
+    </category>
+
+    <category>
+        <pattern>VOCE GOSTA DE COMER PIZZA</pattern>
+        <template><srai>O QUE VOCÊ GOSTA DE COMER</srai></template>
+    </category>
+    
+    <category>
+        <pattern>VOCÊ GOSTA DE DOCE</pattern>
+        <template><srai>O QUE VOCÊ GOSTA DE COMER</srai></template>
+    </category>
+    
+    <category>
+        <pattern>VC GOSTA DE CHOCOLATE</pattern>
+        <template><srai>O QUE VOCÊ GOSTA DE COMER</srai></template>
+    </category>
+
+    <category>
+        <pattern>VOCÊ GOSTA DE COMER O QUE</pattern>
+        <template><srai>O QUE VOCÊ GOSTA DE COMER</srai></template>
+    </category>
+
     <category>
         <pattern>*</pattern>
         <template>
-             <random>
-                <li>Não entendi o que você falou, tenta me dizer de outra forma.</li>
-                <li>😔 Não sei se consigo te ajudar com isso, tente uma das minhas opções</li>
-            </random>
+            😔  Não entendi direito. Talvez você queira dizer:
+                <button>
+                    <text>Qual sua experiência profissional?</text>
+                    <postback>QUAIS SÃO SUAS SKILLS</postback>
+                </button>
+                <button>
+                    <text>Qual o seu linkedin?</text>
+                    <url>https://www.linkedin.com/in/blueevee/</url>
+                </button>
+                <button>
+                    <text>Você gosta de pets?</text>
+                    <postback>VOCÊ GOSTA DE PETS</postback>
+                </button>
+                <button>
+                    <text>De que tipo de comida você gosta?</text>
+                    <postback>O QUE VOCÊ GOSTA DE COMER</postback>
+                </button>
         </template>
    </category>
   
