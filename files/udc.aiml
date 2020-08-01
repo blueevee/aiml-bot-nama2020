@@ -75,6 +75,9 @@
         </template>
     </category>
 
+<category><pattern>COMO É O MEU NOME MESMO</pattern><template><srai>COMO É MEU NOME</srai></template></category>
+
+
     <category>
         <pattern>QUAL O MEU NOME</pattern>
         <template><srai>COMO É MEU NOME</srai></template>
@@ -163,6 +166,9 @@
         </template>
     </category>
 
+<category><pattern>VOCÊ GOSTA DE CACHORRO</pattern><template><srai>VOCÊ GOSTA DE PETS</srai></template></category>
+
+
     <category>
         <pattern>VOCÊ GOSTA DE ANIMAIS</pattern>
         <template><srai>VOCÊ GOSTA DE PETS</srai></template>
@@ -208,7 +214,7 @@
     <category>
         <pattern>*</pattern>
         <template>
-            😔  Não entendi direito. Talvez você queira dizer:
+            😔  Não entendi o que você quis dizer. Talvez seja uma das opções abaixo:
                 <button>
                     <text>Qual sua experiência profissional?</text>
                     <postback>QUAIS SÃO SUAS SKILLS</postback>
@@ -232,4 +238,21 @@
         </template>
    </category>
   
+<category>
+    <pattern>TCHAU</pattern>
+    <template>
+        <random>
+          <li>Tchau, Obrigado pelo contato.😊</li>  
+          <li>Obrigado pelo contato e até mais!</li>  
+        </random>
+    </template>
+</category>
+
+<category><pattern>BYE</pattern><template><srai>TCHAU</srai></template></category>
+<category><pattern>TIAU</pattern><template><srai>TCHAU</srai></template></category>
+<category><pattern>TAU</pattern><template><srai>TCHAU</srai></template></category>
+<category><pattern>ATÉ MAIS</pattern><template><srai>TCHAU</srai></template></category>
+<category><pattern>ADEUS</pattern><template><srai>TCHAU</srai></template></category>
+<category><pattern>NÃO QUERO MAIS CONVERSAR</pattern><template><srai>TCHAU</srai></template></category>
+
 </aiml>
