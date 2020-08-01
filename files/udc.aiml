@@ -225,6 +225,10 @@
                     <text>De que tipo de comida você gosta?</text>
                     <postback>O QUE VOCÊ GOSTA DE COMER</postback>
                 </button>
+                <button>
+                    <text>Diga de 1 a 20</text>
+                    <postback>DIGA DE 1 A 20</postback>
+                </button>
         </template>
    </category>
   
