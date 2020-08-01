@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    <category>
+        <pattern>OLA</pattern>
+        <template>Olá! Eu sou o Blue, assistente pessoal da Evelyn. Como você se chama?</template>
+    </category>
+  
+    <category>
+        <pattern>MEU NOME É *</pattern>
+        <template>Muito prazer, <set name="username"><star/></set>. Como eu posso te ajudar?</template>
+    </category>
+  
+    <category>
+        <pattern>COMO É MEU NOME</pattern>
+        <template>
+            <think>
+                <set name="prhase">
+                    <random>
+                        <li><formal><get name="username" /></formal>!</li>
+                        <li>Seu nome é <formal><get name="username" /></formal>.</li>
+                        <li>Acho melhor anotar para não esquecer viu <formal><get name="username" /></formal>?!</li>
+                    </random>
+                </set>
+            </think>
+            <condition name="username">
+                <li value="unknown"> 🤔 Eu ainda não sei o seu nome. Como você se chama?</li>
+                <li> <get name="prhase" /></li>
+            </condition>
+        </template>
+    </category>
+  
+    <category>
+        <pattern>CONTE DE <set>number</set> ATÉ <set>number</set></pattern>
+        <template>
+             Vamos lá...
+             <br/>
+            <think><set name="count">
+                <map>
+                    <name>predecessor</name><star index="1"/>
+                </map>
+                </set></think>
+                <condition name="count">
+                    <li><value><star index="2" /></value></li>
+                    <li>
+                        <set name="count">
+                            <map> <name>successor</name> <get name="count"/></map>
+                        </set>
+                        <loop/> </li>
+                </condition>
+        </template>
+    </category>
+  
+    <category>
+        <pattern>*</pattern>
+        <template>
+             <random>
+                <li>Não entendi o que você falou, tenta me dizer de outra forma.</li>
+                <li>😔 Não sei se consigo te ajudar com isso, tente uma das minhas opções</li>
+            </random>
+        </template>
+   </category>
+  
+</aiml>
